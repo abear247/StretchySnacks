@@ -38,26 +38,67 @@
                                             <action selector="plusButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M8j-Dc-k92"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SNACKS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="imC-DR-mZs">
+                                        <rect key="frame" x="154" y="22" width="66" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.79559474434388444" green="0.80956333281034265" blue="0.87465257039746191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="zMV-dS-vQy" secondAttribute="trailing" id="0ZK-aK-DGg"/>
                                     <constraint firstAttribute="height" constant="64" id="9Yw-80-CcA"/>
+                                    <constraint firstItem="imC-DR-mZs" firstAttribute="top" secondItem="2jL-MM-mbs" secondAttribute="top" constant="22" id="Mwd-nj-1Ul"/>
+                                    <constraint firstItem="imC-DR-mZs" firstAttribute="centerX" secondItem="2jL-MM-mbs" secondAttribute="centerX" id="kwM-F0-VCD"/>
                                     <constraint firstItem="zMV-dS-vQy" firstAttribute="top" secondItem="2jL-MM-mbs" secondAttribute="top" id="tYG-ob-4Bh"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qta-TL-Z22">
+                                <rect key="frame" x="0.0" y="62" width="375" height="605"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="Md1-db-GF1" style="IBUITableViewCellStyleDefault" id="oeC-mR-BUp">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oeC-mR-BUp" id="Een-8p-RlB">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Md1-db-GF1">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="GBK-e1-1ip"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="UJr-5y-NSc"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qta-TL-Z22" secondAttribute="bottom" id="00Y-PS-xhv"/>
+                            <constraint firstItem="qta-TL-Z22" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0zc-zc-nuW"/>
                             <constraint firstItem="2jL-MM-mbs" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="41g-gR-ipw"/>
+                            <constraint firstItem="qta-TL-Z22" firstAttribute="top" secondItem="2jL-MM-mbs" secondAttribute="bottom" constant="-2" id="Zln-HJ-yJm"/>
                             <constraint firstAttribute="trailing" secondItem="2jL-MM-mbs" secondAttribute="trailing" id="izB-K8-LMl"/>
                             <constraint firstItem="2jL-MM-mbs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zC4-1F-FGN"/>
+                            <constraint firstAttribute="trailing" secondItem="qta-TL-Z22" secondAttribute="trailing" id="zg9-Mv-ELe"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="fakeNavBar" destination="2jL-MM-mbs" id="RTr-LY-8V5"/>
                         <outlet property="navBarHeight" destination="9Yw-80-CcA" id="dZt-G7-0oH"/>
                         <outlet property="plusButtonProperty" destination="zMV-dS-vQy" id="0B3-fo-lA0"/>
+                        <outlet property="snacksLabel" destination="imC-DR-mZs" id="kBL-Lr-Cxl"/>
+                        <outlet property="tableView" destination="qta-TL-Z22" id="S2M-9g-91t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
